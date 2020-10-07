@@ -4,14 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MarsRover {
-    private int positionX;
-    private int positionY;
-    private Direction heading;
+    private RoverStatus roverStatus;
 
     public MarsRover(int positionX, int positionY, Direction heading) {
-        this.positionX = positionX;
-        this.positionY = positionY;
-        this.heading = heading;
+        this.roverStatus = new RoverStatus(positionX, positionY, heading);
     }
 
     public void executeCommands(String commands) {
@@ -20,42 +16,20 @@ public class MarsRover {
     }
 
     private void executeCommand(String command) {
-        Direction NORTH = Direction.N;
-        Direction WEST = Direction.W;
-        Direction EAST = Direction.E;
-        Direction SOUTH = Direction.S;
-        if (command.equalsIgnoreCase("M")) {
-            if (heading.equals(NORTH)) {
-                positionY += 1;
-            }
-
-            if (heading.equals(SOUTH)) {
-                positionY -= 1;
-            }
-
-            if (heading.equals(EAST)) {
-                positionX += 1;
-            }
-
-            if (heading.equals(WEST)) {
-                positionX -= 1;
-            }
-        } else if (command.equalsIgnoreCase("L")) {
-            heading = heading.left();
-        } else if (command.equals("R")) {
-            heading = heading.right();
+        if (!command.isEmpty()) {
+            roverStatus = new CommandFactory().build(command).operate(roverStatus);
         }
     }
 
     public int getPositionX() {
-        return positionX;
+        return roverStatus.getPositionX();
     }
 
     public int getPositionY() {
-        return positionY;
+        return roverStatus.getPositionY();
     }
 
     public Direction getHeading() {
-        return heading;
+        return roverStatus.getDirection();
     }
 }
