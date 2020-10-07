@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class MarsRoverTest {
     @Test
-    public void should_return_init_place_when_action_given_command_is_empty() {
+    public void should_return_init_place_when_execute_given_command_is_empty() {
         //given
         MarsRover marsRover = new MarsRover(1, 1, "N");
 
@@ -16,11 +16,11 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(1, marsRover.getPositionX());
         Assertions.assertEquals(1, marsRover.getPositionY());
-        Assertions.assertEquals("N", marsRover.getDirection());
+        Assertions.assertEquals("N", marsRover.getHeading());
     }
 
     @Test
-    public void should_return_x_plus_1_when_action_given_command_is_M_and_facing_is_N() {
+    public void should_return_x_plus_1_when_execute_given_command_is_M_and_heading_is_N() {
         //given
         MarsRover marsRover = new MarsRover(1, 1, "N");
 
@@ -30,11 +30,11 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(1, marsRover.getPositionX());
         Assertions.assertEquals(2, marsRover.getPositionY());
-        Assertions.assertEquals("N", marsRover.getDirection());
+        Assertions.assertEquals("N", marsRover.getHeading());
     }
 
     @Test
-    public void should_return_x_minus_1_when_action_given_command_is_M_and_facing_is_S() {
+    public void should_return_x_minus_1_when_execute_given_command_is_M_and_heading_is_S() {
         //given
         MarsRover marsRover = new MarsRover(1, 1, "S");
 
@@ -44,11 +44,11 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(1, marsRover.getPositionX());
         Assertions.assertEquals(0, marsRover.getPositionY());
-        Assertions.assertEquals("S", marsRover.getDirection());
+        Assertions.assertEquals("S", marsRover.getHeading());
     }
 
     @Test
-    public void should_return_y_plus_1_when_action_given_command_is_M_and_facing_is_E() {
+    public void should_return_y_plus_1_when_execute_given_command_is_M_and_heading_is_E() {
         //given
         MarsRover marsRover = new MarsRover(1, 1, "E");
 
@@ -58,11 +58,11 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(2, marsRover.getPositionX());
         Assertions.assertEquals(1, marsRover.getPositionY());
-        Assertions.assertEquals("E", marsRover.getDirection());
+        Assertions.assertEquals("E", marsRover.getHeading());
     }
 
     @Test
-    public void should_return_y_minus_1_when_action_given_command_is_M_and_facing_is_W() {
+    public void should_return_y_minus_1_when_execute_given_command_is_M_and_heading_is_W() {
         //given
         MarsRover marsRover = new MarsRover(1, 1, "W");
 
@@ -72,6 +72,6 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(0, marsRover.getPositionX());
         Assertions.assertEquals(1, marsRover.getPositionY());
-        Assertions.assertEquals("W", marsRover.getDirection());
+        Assertions.assertEquals("W", marsRover.getHeading());
     }
 }

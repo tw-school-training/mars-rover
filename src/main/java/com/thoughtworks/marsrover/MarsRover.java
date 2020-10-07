@@ -6,12 +6,12 @@ import java.util.List;
 public class MarsRover {
     private int positionX;
     private int positionY;
-    private final String direction;
+    private final String heading;
 
-    public MarsRover(int positionX, int positionY, String direction) {
+    public MarsRover(int positionX, int positionY, String heading) {
         this.positionX = positionX;
         this.positionY = positionY;
-        this.direction = direction;
+        this.heading = heading;
     }
 
     public void executeCommands(String commands) {
@@ -21,19 +21,19 @@ public class MarsRover {
 
     private void executeCommand(String command) {
         if (command.equalsIgnoreCase("M")) {
-            if (direction.equalsIgnoreCase("N")) {
+            if (heading.equalsIgnoreCase("N")) {
                 positionY += 1;
             }
 
-            if (direction.equalsIgnoreCase("S")) {
+            if (heading.equalsIgnoreCase("S")) {
                 positionY -= 1;
             }
 
-            if (direction.equalsIgnoreCase("E")) {
+            if (heading.equalsIgnoreCase("E")) {
                 positionX += 1;
             }
 
-            if (direction.equalsIgnoreCase("W")) {
+            if (heading.equalsIgnoreCase("W")) {
                 positionX -= 1;
             }
         }
@@ -47,7 +47,7 @@ public class MarsRover {
         return positionY;
     }
 
-    public String getDirection() {
-        return direction;
+    public String getHeading() {
+        return heading;
     }
 }
