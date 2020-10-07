@@ -21,6 +21,8 @@ public class MarsRover {
         }
     }
 
+    //Todo getRoverStatus
+
     public int getPositionX() {
         return roverStatus.getPositionX();
     }
