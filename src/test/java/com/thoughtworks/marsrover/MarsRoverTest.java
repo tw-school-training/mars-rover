@@ -15,6 +15,8 @@ public class MarsRoverTest {
 
         //then
         Assertions.assertEquals(1, marsRover.getPositionX());
+        Assertions.assertEquals(1, marsRover.getPositionY());
+        Assertions.assertEquals("N", marsRover.getDirection());
     }
 
     @Test
@@ -27,6 +29,8 @@ public class MarsRoverTest {
 
         //then
         Assertions.assertEquals(2, marsRover.getPositionX());
+        Assertions.assertEquals(1, marsRover.getPositionY());
+        Assertions.assertEquals("N", marsRover.getDirection());
     }
 
     @Test
@@ -39,5 +43,7 @@ public class MarsRoverTest {
 
         //then
         Assertions.assertEquals(0, marsRover.getPositionX());
+        Assertions.assertEquals(1, marsRover.getPositionY());
+        Assertions.assertEquals("S", marsRover.getDirection());
     }
 }
