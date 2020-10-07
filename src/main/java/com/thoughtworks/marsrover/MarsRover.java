@@ -6,9 +6,9 @@ import java.util.List;
 public class MarsRover {
     private int positionX;
     private int positionY;
-    private String heading;
+    private Direction heading;
 
-    public MarsRover(int positionX, int positionY, String heading) {
+    public MarsRover(int positionX, int positionY, Direction heading) {
         this.positionX = positionX;
         this.positionY = positionY;
         this.heading = heading;
@@ -20,46 +20,30 @@ public class MarsRover {
     }
 
     private void executeCommand(String command) {
-        String NORTH = "N";
-        String WEST = "W";
-        String EAST = "E";
-        String SOUTH = "S";
+        Direction NORTH = Direction.N;
+        Direction WEST = Direction.W;
+        Direction EAST = Direction.E;
+        Direction SOUTH = Direction.S;
         if (command.equalsIgnoreCase("M")) {
-            if (heading.equalsIgnoreCase(NORTH)) {
+            if (heading.equals(NORTH)) {
                 positionY += 1;
             }
 
-            if (heading.equalsIgnoreCase(SOUTH)) {
+            if (heading.equals(SOUTH)) {
                 positionY -= 1;
             }
 
-            if (heading.equalsIgnoreCase(EAST)) {
+            if (heading.equals(EAST)) {
                 positionX += 1;
             }
 
-            if (heading.equalsIgnoreCase(WEST)) {
+            if (heading.equals(WEST)) {
                 positionX -= 1;
             }
         } else if (command.equalsIgnoreCase("L")) {
-            if (heading.equalsIgnoreCase(NORTH)) {
-                heading = WEST;
-            } else if (heading.equalsIgnoreCase(EAST)) {
-                heading = NORTH;
-            } else if (heading.equalsIgnoreCase(SOUTH)) {
-                heading = EAST;
-            } else if (heading.equalsIgnoreCase(WEST)) {
-                heading = SOUTH;
-            }
-        } else if (command.equalsIgnoreCase("R")) {
-            if (heading.equalsIgnoreCase(NORTH)) {
-                heading = EAST;
-            } else if (heading.equalsIgnoreCase(EAST)) {
-                heading = SOUTH;
-            } else if (heading.equalsIgnoreCase(SOUTH)) {
-                heading = WEST;
-            } else if (heading.equalsIgnoreCase(WEST)) {
-                heading = NORTH;
-            }
+            heading = heading.left();
+        } else if (command.equals("R")) {
+            heading = heading.right();
         }
     }
 
@@ -71,7 +55,7 @@ public class MarsRover {
         return positionY;
     }
 
-    public String getHeading() {
+    public Direction getHeading() {
         return heading;
     }
 }

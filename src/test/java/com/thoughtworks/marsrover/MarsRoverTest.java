@@ -8,7 +8,7 @@ public class MarsRoverTest {
     @Test
     public void should_return_init_place_when_execute_given_command_is_empty() {
         //given
-        MarsRover marsRover = new MarsRover(1, 1, "N");
+        MarsRover marsRover = new MarsRover(1, 1, Direction.N);
 
         //when
         marsRover.executeCommands("");
@@ -16,13 +16,13 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(1, marsRover.getPositionX());
         Assertions.assertEquals(1, marsRover.getPositionY());
-        Assertions.assertEquals("N", marsRover.getHeading());
+        Assertions.assertEquals(Direction.N, marsRover.getHeading());
     }
 
     @Test
     public void should_return_x_plus_1_when_execute_given_command_is_M_and_heading_is_N() {
         //given
-        MarsRover marsRover = new MarsRover(1, 1, "N");
+        MarsRover marsRover = new MarsRover(1, 1, Direction.N);
 
         //when
         marsRover.executeCommands("M");
@@ -30,13 +30,13 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(1, marsRover.getPositionX());
         Assertions.assertEquals(2, marsRover.getPositionY());
-        Assertions.assertEquals("N", marsRover.getHeading());
+        Assertions.assertEquals(Direction.N, marsRover.getHeading());
     }
 
     @Test
     public void should_return_x_minus_1_when_execute_given_command_is_M_and_heading_is_S() {
         //given
-        MarsRover marsRover = new MarsRover(1, 1, "S");
+        MarsRover marsRover = new MarsRover(1, 1, Direction.S);
 
         //when
         marsRover.executeCommands("M");
@@ -44,13 +44,13 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(1, marsRover.getPositionX());
         Assertions.assertEquals(0, marsRover.getPositionY());
-        Assertions.assertEquals("S", marsRover.getHeading());
+        Assertions.assertEquals(Direction.S, marsRover.getHeading());
     }
 
     @Test
     public void should_return_y_plus_1_when_execute_given_command_is_M_and_heading_is_E() {
         //given
-        MarsRover marsRover = new MarsRover(1, 1, "E");
+        MarsRover marsRover = new MarsRover(1, 1, Direction.E);
 
         //when
         marsRover.executeCommands("M");
@@ -58,13 +58,13 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(2, marsRover.getPositionX());
         Assertions.assertEquals(1, marsRover.getPositionY());
-        Assertions.assertEquals("E", marsRover.getHeading());
+        Assertions.assertEquals(Direction.E, marsRover.getHeading());
     }
 
     @Test
     public void should_return_y_minus_1_when_execute_given_command_is_M_and_heading_is_W() {
         //given
-        MarsRover marsRover = new MarsRover(1, 1, "W");
+        MarsRover marsRover = new MarsRover(1, 1, Direction.W);
 
         //when
         marsRover.executeCommands("M");
@@ -72,13 +72,13 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(0, marsRover.getPositionX());
         Assertions.assertEquals(1, marsRover.getPositionY());
-        Assertions.assertEquals("W", marsRover.getHeading());
+        Assertions.assertEquals(Direction.W, marsRover.getHeading());
     }
 
     @Test
     public void should_return_heading_W_when_execute_given_command_is_L_and_heading_is_N() {
         //given
-        MarsRover marsRover = new MarsRover(1, 1, "N");
+        MarsRover marsRover = new MarsRover(1, 1, Direction.N);
 
         //when
         marsRover.executeCommands("L");
@@ -86,13 +86,13 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(1, marsRover.getPositionX());
         Assertions.assertEquals(1, marsRover.getPositionY());
-        Assertions.assertEquals("W", marsRover.getHeading());
+        Assertions.assertEquals(Direction.W, marsRover.getHeading());
     }
 
     @Test
     public void should_return_heading_E_when_execute_given_command_is_R_and_heading_is_N() {
         //given
-        MarsRover marsRover = new MarsRover(1, 1, "N");
+        MarsRover marsRover = new MarsRover(1, 1, Direction.N);
 
         //when
         marsRover.executeCommands("R");
@@ -100,13 +100,13 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(1, marsRover.getPositionX());
         Assertions.assertEquals(1, marsRover.getPositionY());
-        Assertions.assertEquals("E", marsRover.getHeading());
+        Assertions.assertEquals(Direction.E, marsRover.getHeading());
     }
 
     @Test
     public void should_return_heading_N_when_execute_given_command_is_L_and_heading_is_E() {
         //given
-        MarsRover marsRover = new MarsRover(1, 1, "E");
+        MarsRover marsRover = new MarsRover(1, 1, Direction.E);
 
         //when
         marsRover.executeCommands("L");
@@ -114,13 +114,13 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(1, marsRover.getPositionX());
         Assertions.assertEquals(1, marsRover.getPositionY());
-        Assertions.assertEquals("N", marsRover.getHeading());
+        Assertions.assertEquals(Direction.N, marsRover.getHeading());
     }
 
     @Test
     public void should_return_heading_S_when_execute_given_command_is_R_and_heading_is_E() {
         //given
-        MarsRover marsRover = new MarsRover(1, 1, "E");
+        MarsRover marsRover = new MarsRover(1, 1, Direction.E);
 
         //when
         marsRover.executeCommands("R");
@@ -128,13 +128,13 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(1, marsRover.getPositionX());
         Assertions.assertEquals(1, marsRover.getPositionY());
-        Assertions.assertEquals("S", marsRover.getHeading());
+        Assertions.assertEquals(Direction.S, marsRover.getHeading());
     }
 
     @Test
     public void should_return_heading_E_when_execute_given_command_is_L_and_heading_is_S() {
         //given
-        MarsRover marsRover = new MarsRover(1, 1, "S");
+        MarsRover marsRover = new MarsRover(1, 1, Direction.S);
 
         //when
         marsRover.executeCommands("L");
@@ -142,13 +142,13 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(1, marsRover.getPositionX());
         Assertions.assertEquals(1, marsRover.getPositionY());
-        Assertions.assertEquals("E", marsRover.getHeading());
+        Assertions.assertEquals(Direction.E, marsRover.getHeading());
     }
 
     @Test
     public void should_return_heading_W_when_execute_given_command_is_R_and_heading_is_S() {
         //given
-        MarsRover marsRover = new MarsRover(1, 1, "S");
+        MarsRover marsRover = new MarsRover(1, 1, Direction.S);
 
         //when
         marsRover.executeCommands("R");
@@ -156,13 +156,13 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(1, marsRover.getPositionX());
         Assertions.assertEquals(1, marsRover.getPositionY());
-        Assertions.assertEquals("W", marsRover.getHeading());
+        Assertions.assertEquals(Direction.W, marsRover.getHeading());
     }
 
     @Test
     public void should_return_heading_S_when_execute_given_command_is_L_and_heading_is_W() {
         //given
-        MarsRover marsRover = new MarsRover(1, 1, "W");
+        MarsRover marsRover = new MarsRover(1, 1, Direction.W);
 
         //when
         marsRover.executeCommands("L");
@@ -170,13 +170,13 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(1, marsRover.getPositionX());
         Assertions.assertEquals(1, marsRover.getPositionY());
-        Assertions.assertEquals("S", marsRover.getHeading());
+        Assertions.assertEquals(Direction.S, marsRover.getHeading());
     }
 
     @Test
     public void should_return_heading_N_when_execute_given_command_is_R_and_heading_is_W() {
         //given
-        MarsRover marsRover = new MarsRover(1, 1, "W");
+        MarsRover marsRover = new MarsRover(1, 1, Direction.W);
 
         //when
         marsRover.executeCommands("R");
@@ -184,6 +184,6 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(1, marsRover.getPositionX());
         Assertions.assertEquals(1, marsRover.getPositionY());
-        Assertions.assertEquals("N", marsRover.getHeading());
+        Assertions.assertEquals(Direction.N, marsRover.getHeading());
     }
 }
