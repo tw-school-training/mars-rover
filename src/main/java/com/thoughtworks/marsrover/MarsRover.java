@@ -20,8 +20,10 @@ public class MarsRover {
     }
 
     private void executeCommand(String command) {
+        String NORTH = "N";
+        String WEST = "W";
         if (command.equalsIgnoreCase("M")) {
-            if (heading.equalsIgnoreCase("N")) {
+            if (heading.equalsIgnoreCase(NORTH)) {
                 positionY += 1;
             }
 
@@ -33,16 +35,14 @@ public class MarsRover {
                 positionX += 1;
             }
 
-            if (heading.equalsIgnoreCase("W")) {
+            if (heading.equalsIgnoreCase(WEST)) {
                 positionX -= 1;
             }
         } else if (command.equalsIgnoreCase("L")) {
-            if (heading.equalsIgnoreCase("N")) {
-                heading = "W";
+            if (heading.equalsIgnoreCase(NORTH)) {
+                heading = WEST;
             }
         }
-
-
     }
 
     public int getPositionX() {
