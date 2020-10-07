@@ -24,6 +24,10 @@ public class MarsRover {
             if (direction.equalsIgnoreCase("E")) {
                 positionX += 1;
             }
+
+            if (direction.equalsIgnoreCase("S")) {
+                positionX -= 1;
+            }
         }
     }
 

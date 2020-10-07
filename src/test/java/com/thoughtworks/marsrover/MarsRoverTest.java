@@ -28,4 +28,16 @@ public class MarsRoverTest {
         //then
         Assertions.assertEquals(2, marsRover.getPositionX());
     }
+
+    @Test
+    public void should_return_x_minus_1_when_action_given_command_is_M_and_facing_is_S() {
+        //given
+        MarsRover marsRover = new MarsRover(1, 1, "S");
+
+        //when
+        marsRover.executeCommands("M");
+
+        //then
+        Assertions.assertEquals(0, marsRover.getPositionX());
+    }
 }
