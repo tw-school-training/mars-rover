@@ -22,19 +22,19 @@ public class MarsRover {
     private void executeCommand(String command) {
         if (command.equalsIgnoreCase("M")) {
             if (direction.equalsIgnoreCase("N")) {
-                positionX += 1;
-            }
-
-            if (direction.equalsIgnoreCase("S")) {
-                positionX -= 1;
-            }
-
-            if (direction.equalsIgnoreCase("E")) {
                 positionY += 1;
             }
 
-            if (direction.equalsIgnoreCase("W")) {
+            if (direction.equalsIgnoreCase("S")) {
                 positionY -= 1;
+            }
+
+            if (direction.equalsIgnoreCase("E")) {
+                positionX += 1;
+            }
+
+            if (direction.equalsIgnoreCase("W")) {
+                positionX -= 1;
             }
         }
     }
