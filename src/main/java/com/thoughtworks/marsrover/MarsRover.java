@@ -42,6 +42,10 @@ public class MarsRover {
             if (heading.equalsIgnoreCase(NORTH)) {
                 heading = WEST;
             }
+        } else if (command.equalsIgnoreCase("R")) {
+            if (heading.equalsIgnoreCase(NORTH)) {
+                heading = "E";
+            }
         }
     }
 
