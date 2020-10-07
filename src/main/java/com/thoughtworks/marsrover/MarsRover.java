@@ -23,12 +23,13 @@ public class MarsRover {
         String NORTH = "N";
         String WEST = "W";
         String EAST = "E";
+        String SOUTH = "S";
         if (command.equalsIgnoreCase("M")) {
             if (heading.equalsIgnoreCase(NORTH)) {
                 positionY += 1;
             }
 
-            if (heading.equalsIgnoreCase("S")) {
+            if (heading.equalsIgnoreCase(SOUTH)) {
                 positionY -= 1;
             }
 
@@ -42,10 +43,22 @@ public class MarsRover {
         } else if (command.equalsIgnoreCase("L")) {
             if (heading.equalsIgnoreCase(NORTH)) {
                 heading = WEST;
+            } else if (heading.equalsIgnoreCase(EAST)) {
+                heading = NORTH;
+            } else if (heading.equalsIgnoreCase(SOUTH)) {
+                heading = EAST;
+            } else if (heading.equalsIgnoreCase(WEST)) {
+                heading = SOUTH;
             }
         } else if (command.equalsIgnoreCase("R")) {
             if (heading.equalsIgnoreCase(NORTH)) {
                 heading = EAST;
+            } else if (heading.equalsIgnoreCase(EAST)) {
+                heading = SOUTH;
+            } else if (heading.equalsIgnoreCase(SOUTH)) {
+                heading = WEST;
+            } else if (heading.equalsIgnoreCase(WEST)) {
+                heading = NORTH;
             }
         }
     }

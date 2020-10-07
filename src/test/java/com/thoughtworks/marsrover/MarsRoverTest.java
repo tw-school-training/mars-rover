@@ -102,4 +102,88 @@ public class MarsRoverTest {
         Assertions.assertEquals(1, marsRover.getPositionY());
         Assertions.assertEquals("E", marsRover.getHeading());
     }
+
+    @Test
+    public void should_return_heading_N_when_execute_given_command_is_L_and_heading_is_E() {
+        //given
+        MarsRover marsRover = new MarsRover(1, 1, "E");
+
+        //when
+        marsRover.executeCommands("L");
+
+        //then
+        Assertions.assertEquals(1, marsRover.getPositionX());
+        Assertions.assertEquals(1, marsRover.getPositionY());
+        Assertions.assertEquals("N", marsRover.getHeading());
+    }
+
+    @Test
+    public void should_return_heading_S_when_execute_given_command_is_R_and_heading_is_E() {
+        //given
+        MarsRover marsRover = new MarsRover(1, 1, "E");
+
+        //when
+        marsRover.executeCommands("R");
+
+        //then
+        Assertions.assertEquals(1, marsRover.getPositionX());
+        Assertions.assertEquals(1, marsRover.getPositionY());
+        Assertions.assertEquals("S", marsRover.getHeading());
+    }
+
+    @Test
+    public void should_return_heading_E_when_execute_given_command_is_L_and_heading_is_S() {
+        //given
+        MarsRover marsRover = new MarsRover(1, 1, "S");
+
+        //when
+        marsRover.executeCommands("L");
+
+        //then
+        Assertions.assertEquals(1, marsRover.getPositionX());
+        Assertions.assertEquals(1, marsRover.getPositionY());
+        Assertions.assertEquals("E", marsRover.getHeading());
+    }
+
+    @Test
+    public void should_return_heading_W_when_execute_given_command_is_R_and_heading_is_S() {
+        //given
+        MarsRover marsRover = new MarsRover(1, 1, "S");
+
+        //when
+        marsRover.executeCommands("R");
+
+        //then
+        Assertions.assertEquals(1, marsRover.getPositionX());
+        Assertions.assertEquals(1, marsRover.getPositionY());
+        Assertions.assertEquals("W", marsRover.getHeading());
+    }
+
+    @Test
+    public void should_return_heading_S_when_execute_given_command_is_L_and_heading_is_W() {
+        //given
+        MarsRover marsRover = new MarsRover(1, 1, "W");
+
+        //when
+        marsRover.executeCommands("L");
+
+        //then
+        Assertions.assertEquals(1, marsRover.getPositionX());
+        Assertions.assertEquals(1, marsRover.getPositionY());
+        Assertions.assertEquals("S", marsRover.getHeading());
+    }
+
+    @Test
+    public void should_return_heading_N_when_execute_given_command_is_R_and_heading_is_W() {
+        //given
+        MarsRover marsRover = new MarsRover(1, 1, "W");
+
+        //when
+        marsRover.executeCommands("R");
+
+        //then
+        Assertions.assertEquals(1, marsRover.getPositionX());
+        Assertions.assertEquals(1, marsRover.getPositionY());
+        Assertions.assertEquals("N", marsRover.getHeading());
+    }
 }
