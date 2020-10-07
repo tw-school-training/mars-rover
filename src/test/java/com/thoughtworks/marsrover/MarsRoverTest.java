@@ -18,9 +18,9 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_return_x_plus_1_when_action_given_command_is_M_and_facing_is_E() {
+    public void should_return_x_plus_1_when_action_given_command_is_M_and_facing_is_N() {
         //given
-        MarsRover marsRover = new MarsRover(1, 1, "E");
+        MarsRover marsRover = new MarsRover(1, 1, "N");
 
         //when
         marsRover.executeCommands("M");

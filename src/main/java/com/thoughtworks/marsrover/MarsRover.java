@@ -21,7 +21,7 @@ public class MarsRover {
 
     private void executeCommand(String command) {
         if (command.equalsIgnoreCase("M")) {
-            if (direction.equalsIgnoreCase("E")) {
+            if (direction.equalsIgnoreCase("N")) {
                 positionX += 1;
             }
 
