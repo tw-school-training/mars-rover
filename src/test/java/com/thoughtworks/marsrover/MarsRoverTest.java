@@ -74,4 +74,18 @@ public class MarsRoverTest {
         Assertions.assertEquals(1, marsRover.getPositionY());
         Assertions.assertEquals("W", marsRover.getHeading());
     }
+
+    @Test
+    public void should_return_heading_W_when_execute_given_command_is_L_and_heading_is_N() {
+        //given
+        MarsRover marsRover = new MarsRover(1, 1, "N");
+
+        //when
+        marsRover.executeCommands("L");
+
+        //then
+        Assertions.assertEquals(1, marsRover.getPositionX());
+        Assertions.assertEquals(1, marsRover.getPositionY());
+        Assertions.assertEquals("W", marsRover.getHeading());
+    }
 }

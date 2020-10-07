@@ -6,7 +6,7 @@ import java.util.List;
 public class MarsRover {
     private int positionX;
     private int positionY;
-    private final String heading;
+    private String heading;
 
     public MarsRover(int positionX, int positionY, String heading) {
         this.positionX = positionX;
@@ -36,7 +36,13 @@ public class MarsRover {
             if (heading.equalsIgnoreCase("W")) {
                 positionX -= 1;
             }
+        } else if (command.equalsIgnoreCase("L")) {
+            if (heading.equalsIgnoreCase("N")) {
+                heading = "W";
+            }
         }
+
+
     }
 
     public int getPositionX() {
