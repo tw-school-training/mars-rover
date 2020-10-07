@@ -22,6 +22,7 @@ public class MarsRover {
     private void executeCommand(String command) {
         String NORTH = "N";
         String WEST = "W";
+        String EAST = "E";
         if (command.equalsIgnoreCase("M")) {
             if (heading.equalsIgnoreCase(NORTH)) {
                 positionY += 1;
@@ -31,7 +32,7 @@ public class MarsRover {
                 positionY -= 1;
             }
 
-            if (heading.equalsIgnoreCase("E")) {
+            if (heading.equalsIgnoreCase(EAST)) {
                 positionX += 1;
             }
 
@@ -44,7 +45,7 @@ public class MarsRover {
             }
         } else if (command.equalsIgnoreCase("R")) {
             if (heading.equalsIgnoreCase(NORTH)) {
-                heading = "E";
+                heading = EAST;
             }
         }
     }
