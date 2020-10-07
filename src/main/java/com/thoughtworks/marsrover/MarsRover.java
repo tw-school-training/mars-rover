@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MarsRover {
     private int positionX;
-    private final int positionY;
+    private int positionY;
     private final String direction;
 
     public MarsRover(int positionX, int positionY, String direction) {
@@ -27,6 +27,10 @@ public class MarsRover {
 
             if (direction.equalsIgnoreCase("S")) {
                 positionX -= 1;
+            }
+
+            if (direction.equalsIgnoreCase("E")) {
+                positionY += 1;
             }
         }
     }

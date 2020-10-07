@@ -46,4 +46,18 @@ public class MarsRoverTest {
         Assertions.assertEquals(1, marsRover.getPositionY());
         Assertions.assertEquals("S", marsRover.getDirection());
     }
+
+    @Test
+    public void should_return_y_plus_1_when_action_given_command_is_M_and_facing_is_E() {
+        //given
+        MarsRover marsRover = new MarsRover(1, 1, "E");
+
+        //when
+        marsRover.executeCommands("M");
+
+        //then
+        Assertions.assertEquals(1, marsRover.getPositionX());
+        Assertions.assertEquals(2, marsRover.getPositionY());
+        Assertions.assertEquals("E", marsRover.getDirection());
+    }
 }
